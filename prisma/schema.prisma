@@ -1,0 +1,290 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Customer {
+  id           String        @id @default(cuid())
+  name         String
+  email        String
+  mobile       String
+  orders       Order[]
+  reservations Reservation[]
+  createdAt    DateTime      @default(now())
+
+  @@index([email])
+  @@index([mobile])
+  @@index([email, mobile])
+}
+
+model MenuItem {
+  id              String      @id
+  slug            String      @unique
+  name            String
+  description     String
+  longDescription String
+  category        String
+  price           Int
+  imageUrl        String?
+  imagePosition   String?
+  badge           String?
+  dietary         Json
+  ingredients     Json
+  allergens       Json
+  active          Boolean     @default(true)
+  available       Boolean     @default(true)
+  sortOrder       Int         @default(0)
+  orderItems      OrderItem[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([category, active, available])
+}
+
+model Order {
+  id             String              @id @default(cuid())
+  reference      String              @unique
+  idempotencyKey String              @unique
+  requestHash    String
+  customerId     String
+  customer       Customer            @relation(fields: [customerId], references: [id])
+  status         OrderStatus         @default(PENDING)
+  fulfillment    FulfillmentMethod   @default(PICKUP)
+  paymentMethod  PaymentMethod       @default(PAY_AT_COUNTER)
+  pickupTime     DateTime
+  notes          String?
+  subtotal       Int
+  total          Int
+  emailStatus    EmailDeliveryStatus @default(PENDING)
+  items          OrderItem[]
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
+
+  @@index([status, createdAt])
+  @@index([pickupTime])
+}
+
+model OrderItem {
+  id         String   @id @default(cuid())
+  orderId    String
+  order      Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  menuItemId String
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id])
+  name       String
+  quantity   Int
+  unitPrice  Int
+
+  @@index([orderId])
+}
+
+model Reservation {
+  id              String              @id @default(cuid())
+  reference       String              @unique
+  idempotencyKey  String              @unique
+  requestHash     String
+  customerId      String
+  customer        Customer            @relation(fields: [customerId], references: [id])
+  reservationTime DateTime
+  durationMinutes Int                 @default(90)
+  guests          Int
+  requests        String?
+  status          ReservationStatus   @default(PENDING)
+  emailStatus     EmailDeliveryStatus @default(PENDING)
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  @@index([reservationTime, status])
+  @@index([status, createdAt])
+}
+
+model TableInventory {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  seats     Int
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@index([active, seats])
+}
+
+model ContactInquiry {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  status    InquiryStatus @default(OPEN)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@index([status, createdAt])
+  @@index([email, createdAt])
+}
+
+model NewsletterSubscriber {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  active         Boolean   @default(true)
+  consentedAt    DateTime  @default(now())
+  unsubscribedAt DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([active, createdAt])
+}
+
+model AdminUser {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  role         AdminRole  @default(MANAGER)
+  active       Boolean    @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  auditLogs    AuditLog[]
+  sessions     AdminSession[]
+}
+
+model AdminSession {
+  id            String    @id @default(cuid())
+  adminId       String
+  admin         AdminUser @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  tokenHash     String    @unique
+  csrfHash      String
+  userAgentHash String?
+  ipHash        String?
+  expiresAt     DateTime
+  lastSeenAt    DateTime  @default(now())
+  revokedAt     DateTime?
+  createdAt     DateTime  @default(now())
+
+  @@index([adminId, expiresAt])
+  @@index([expiresAt, revokedAt])
+}
+
+model BusinessSetting {
+  id                         String   @id @default("primary")
+  displayName                String   @default("NOIR & NEON")
+  address                    String?
+  phone                      String?
+  contactEmail               String?
+  mapUrl                     String?
+  instagramUrl               String?
+  facebookUrl                String?
+  timezone                   String   @default("Asia/Kolkata")
+  openingHour                String   @default("08:00")
+  closingHour                String   @default("23:00")
+  kitchenClosingHour         String   @default("22:15")
+  pickupEnabled              Boolean  @default(true)
+  pickupLeadMinutes          Int      @default(25)
+  reservationEnabled         Boolean  @default(true)
+  reservationDurationMinutes Int      @default(90)
+  reservationSlotMinutes     Int      @default(30)
+  reservationCutoffMinutes   Int      @default(60)
+  maxGuestsPerReservation    Int      @default(10)
+  updatedAt                  DateTime @updatedAt
+}
+
+model EmailDelivery {
+  id             String              @id @default(cuid())
+  eventId        String              @unique
+  entityType     String
+  entityId       String
+  kind           String
+  recipient      String
+  payload        Json
+  status         EmailDeliveryStatus @default(PENDING)
+  providerId     String?
+  providerStatus String?
+  attempts       Int                 @default(0)
+  maxAttempts    Int                 @default(5)
+  lastError      String?
+  nextAttemptAt  DateTime            @default(now())
+  lastAttemptAt  DateTime?
+  lockedAt       DateTime?
+  acceptedAt     DateTime?
+  deliveredAt    DateTime?
+  sentAt         DateTime?
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
+
+  @@unique([entityType, entityId, kind, recipient])
+  @@index([status, nextAttemptAt])
+  @@index([status, updatedAt])
+}
+
+model SubmissionGuard {
+  key         String   @id
+  route       String
+  windowStart DateTime
+  count       Int      @default(1)
+  updatedAt   DateTime @updatedAt
+
+  @@index([route, windowStart])
+}
+
+model AuditLog {
+  id         String     @id @default(cuid())
+  adminId    String?
+  admin      AdminUser? @relation(fields: [adminId], references: [id], onDelete: SetNull)
+  action     String
+  entityType String
+  entityId   String?
+  metadata   Json?
+  createdAt  DateTime   @default(now())
+
+  @@index([createdAt])
+  @@index([entityType, entityId])
+}
+
+enum OrderStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  READY
+  COMPLETED
+  CANCELLED
+}
+
+enum FulfillmentMethod {
+  PICKUP
+}
+
+enum PaymentMethod {
+  PAY_AT_COUNTER
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  REJECTED
+  CANCELLED
+}
+
+enum InquiryStatus {
+  OPEN
+  RESOLVED
+}
+
+enum AdminRole {
+  OWNER
+  MANAGER
+}
+
+enum EmailDeliveryStatus {
+  PENDING
+  PROCESSING
+  ACCEPTED
+  DELIVERED
+  RETRYABLE
+  SENT
+  FAILED
+  PARTIAL
+  SKIPPED
+}

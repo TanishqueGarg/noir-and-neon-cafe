@@ -1,0 +1,5 @@
+import { db } from "@/lib/db";
+import { ToggleControl } from "@/components/admin/admin-client";
+import { requireAdminPage } from "@/lib/admin-page";
+export const dynamic="force-dynamic";
+export default async function NewsletterAdmin(){await requireAdminPage();const items=await db.newsletterSubscriber.findMany({orderBy:{createdAt:"desc"},take:250});return <div><p className="eyebrow">Consent records · no bulk sender</p><h1 className="mt-3 font-display text-6xl uppercase">Newsletter</h1><div className="mt-8 overflow-x-auto panel"><table className="w-full text-left text-sm"><thead className="border-b border-line text-xs uppercase tracking-wider text-muted"><tr><th className="p-4">Email</th><th className="p-4">Consented</th><th className="p-4">Status</th></tr></thead><tbody>{items.map(item=><tr className="border-b border-line" key={item.id}><td className="p-4">{item.email}</td><td className="p-4 text-xs text-muted">{item.consentedAt.toLocaleDateString("en-IN")}</td><td className="p-4"><ToggleControl endpoint={`/api/admin/newsletter/${item.id}`} active={item.active} activeLabel="Subscribed" inactiveLabel="Unsubscribed"/></td></tr>)}</tbody></table></div></div>}

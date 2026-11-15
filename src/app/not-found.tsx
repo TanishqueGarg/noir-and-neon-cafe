@@ -1,0 +1,2 @@
+import { Button } from "@/components/ui/button";
+export default function NotFound() { return <div className="grid min-h-[85vh] place-items-center px-5 text-center"><div><span className="font-display text-[10rem] leading-none text-blue">404</span><h1 className="font-display text-6xl uppercase">Lost after dark?</h1><p className="mt-3 text-muted">This table doesn’t exist, but the coffee does.</p><Button href="/" className="mt-8">Back home</Button></div></div>; }

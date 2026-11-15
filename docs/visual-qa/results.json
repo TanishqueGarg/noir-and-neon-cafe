@@ -1,0 +1,715 @@
+{
+  "generatedAt": "2026-10-28T23:35:08.214Z",
+  "baseUrl": "http://localhost:3100",
+  "cssResponses": [
+    {
+      "url": "http://localhost:3100/_next/static/css/179c1faac89c6da6.css",
+      "status": 200,
+      "contentType": "text/css; charset=UTF-8"
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [
+    "GET http://localhost:3100/menu/midnight-cortado?_rsc=GFrcIXSM7F6uRa6B — net::ERR_ABORTED",
+    "GET http://localhost:3100/menu/after-hours-mocha?_rsc=GFrcIXSM7F6uRa6B — net::ERR_ABORTED",
+    "GET http://localhost:3100/menu/cobalt-flat-white?_rsc=GFrcIXSM7F6uRa6B — net::ERR_ABORTED",
+    "GET http://localhost:3100/menu/blackout-cold-brew?_rsc=GFrcIXSM7F6uRa6B — net::ERR_ABORTED",
+    "GET http://localhost:3100/menu/orange-bloom-cold-brew?_rsc=GFrcIXSM7F6uRa6B — net::ERR_ABORTED",
+    "GET http://localhost:3100/menu/lime-tonic-espresso?_rsc=GFrcIXSM7F6uRa6B — net::ERR_ABORTED",
+    "GET http://localhost:3100/_next/static/media/f9e1dbe9676d9bb6-s.woff2 — net::ERR_ABORTED"
+  ],
+  "computedStyles": {
+    "body": {
+      "selector": "body",
+      "backgroundColor": "rgb(8, 10, 15)",
+      "color": "rgb(231, 232, 227)",
+      "display": "block",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "position": "static",
+      "textDecoration": "none"
+    },
+    "navigation": {
+      "selector": "header",
+      "backgroundColor": "rgba(8, 10, 15, 0.8)",
+      "color": "rgb(231, 232, 227)",
+      "display": "block",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "position": "fixed",
+      "textDecoration": "none"
+    },
+    "heading": {
+      "selector": "h1",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(231, 232, 227)",
+      "display": "block",
+      "fontFamily": "\"Bebas Neue\", \"Bebas Neue Fallback\", Impact, sans-serif",
+      "fontSize": "144px",
+      "fontWeight": "400",
+      "position": "static",
+      "textDecoration": "none"
+    },
+    "primaryCta": {
+      "selector": "main section:first-of-type a[href=\"/menu\"]",
+      "backgroundColor": "rgb(165, 189, 79)",
+      "color": "rgb(8, 10, 15)",
+      "display": "flex",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "800",
+      "position": "static",
+      "textDecoration": "none"
+    },
+    "footer": {
+      "selector": "footer",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(150, 156, 170)",
+      "display": "block",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif",
+      "fontSize": "10px",
+      "fontWeight": "700",
+      "position": "static",
+      "textDecoration": "none"
+    },
+    "productCard": {
+      "selector": "article",
+      "backgroundColor": "rgb(16, 20, 29)",
+      "color": "rgb(231, 232, 227)",
+      "display": "block",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "position": "static",
+      "textDecoration": "none"
+    },
+    "formInput": {
+      "selector": "input",
+      "backgroundColor": "rgb(12, 16, 23)",
+      "color": "rgb(231, 232, 227)",
+      "display": "inline-block",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "position": "static",
+      "textDecoration": "none"
+    }
+  },
+  "responsiveChecks": [
+    {
+      "route": "/",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu/midnight-cortado",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/order",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/reservations",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/gallery",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/contact",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/terms",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/admin/login",
+      "viewport": "desktop-1440",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu/midnight-cortado",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/order",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/reservations",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/about",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/gallery",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/contact",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/terms",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/admin/login",
+      "viewport": "desktop-1280",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu/midnight-cortado",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/order",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/reservations",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/gallery",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/contact",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/terms",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/admin/login",
+      "viewport": "tablet-landscape",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu/midnight-cortado",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/order",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/reservations",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/about",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/gallery",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/contact",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/terms",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/admin/login",
+      "viewport": "tablet-portrait",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu/midnight-cortado",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/order",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/reservations",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/gallery",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/contact",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/terms",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/admin/login",
+      "viewport": "mobile-390",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/menu/midnight-cortado",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/order",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/reservations",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/about",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/gallery",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/contact",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/privacy",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/terms",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "route": "/admin/login",
+      "viewport": "mobile-375",
+      "status": 200,
+      "horizontalOverflow": 0,
+      "bodyBackground": "rgb(8, 10, 15)",
+      "fontFamily": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    }
+  ],
+  "screenshots": [
+    "docs\\visual-qa\\screenshots\\home-desktop.png",
+    "docs\\visual-qa\\screenshots\\home-mobile.png",
+    "docs\\visual-qa\\screenshots\\menu-desktop.png",
+    "docs\\visual-qa\\screenshots\\menu-mobile.png",
+    "docs\\visual-qa\\screenshots\\reservations-desktop.png",
+    "docs\\visual-qa\\screenshots\\order-checkout.png",
+    "docs\\visual-qa\\screenshots\\about-desktop.png",
+    "docs\\visual-qa\\screenshots\\gallery-desktop.png",
+    "docs\\visual-qa\\screenshots\\contact-desktop.png",
+    "docs\\visual-qa\\screenshots\\admin-login-desktop.png"
+  ],
+  "assertions": [
+    {
+      "name": "Stylesheet assets loaded",
+      "passed": true,
+      "detail": "[{\"url\":\"http://localhost:3100/_next/static/css/179c1faac89c6da6.css\",\"status\":200,\"contentType\":\"text/css; charset=UTF-8\"}]"
+    },
+    {
+      "name": "Body uses midnight background",
+      "passed": true,
+      "detail": "rgb(8, 10, 15)"
+    },
+    {
+      "name": "Custom body font is active",
+      "passed": true,
+      "detail": "Manrope, \"Manrope Fallback\", Arial, sans-serif"
+    },
+    {
+      "name": "Editorial heading font is active",
+      "passed": true,
+      "detail": "\"Bebas Neue\", \"Bebas Neue Fallback\", Impact, sans-serif / 144px"
+    },
+    {
+      "name": "Navigation is custom fixed header",
+      "passed": true,
+      "detail": "fixed / rgba(8, 10, 15, 0.8)"
+    },
+    {
+      "name": "Primary CTA is styled",
+      "passed": true,
+      "detail": "{\"selector\":\"main section:first-of-type a[href=\\\"/menu\\\"]\",\"backgroundColor\":\"rgb(165, 189, 79)\",\"color\":\"rgb(8, 10, 15)\",\"display\":\"flex\",\"fontFamily\":\"Manrope, \\\"Manrope Fallback\\\", Arial, sans-serif\",\"fontSize\":\"12px\",\"fontWeight\":\"800\",\"position\":\"static\",\"textDecoration\":\"none\"}"
+    },
+    {
+      "name": "Product card has dark surface",
+      "passed": true,
+      "detail": "rgb(16, 20, 29)"
+    },
+    {
+      "name": "Form inputs are custom styled",
+      "passed": true,
+      "detail": "{\"selector\":\"input\",\"backgroundColor\":\"rgb(12, 16, 23)\",\"color\":\"rgb(231, 232, 227)\",\"display\":\"inline-block\",\"fontFamily\":\"Manrope, \\\"Manrope Fallback\\\", Arial, sans-serif\",\"fontSize\":\"16px\",\"fontWeight\":\"400\",\"position\":\"static\",\"textDecoration\":\"none\"}"
+    },
+    {
+      "name": "Footer is dark and links inherit styling",
+      "passed": true,
+      "detail": "{\"selector\":\"footer\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\",\"color\":\"rgb(150, 156, 170)\",\"display\":\"block\",\"fontFamily\":\"Manrope, \\\"Manrope Fallback\\\", Arial, sans-serif\",\"fontSize\":\"10px\",\"fontWeight\":\"700\",\"position\":\"static\",\"textDecoration\":\"none\"}"
+    },
+    {
+      "name": "No horizontal overflow",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "All public routes returned success",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Unauthenticated admin access redirects to login",
+      "passed": true,
+      "detail": "http://localhost:3100/admin/login"
+    },
+    {
+      "name": "No browser page errors",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "All rendered images loaded",
+      "passed": true,
+      "detail": "[]"
+    }
+  ]
+}

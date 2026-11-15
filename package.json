@@ -1,0 +1,66 @@
+{
+  "name": "noir-and-neon",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "tsx scripts/build-preflight.ts && prisma generate && next build",
+    "start": "next start",
+    "lint": "eslint src --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "verify:frontend": "tsx scripts/verify-frontend.ts",
+    "verify": "npm run verify:frontend && npm run test",
+    "qa:visual": "tsx scripts/visual-qa.ts",
+    "qa": "npm run qa:visual",
+    "test": "vitest run",
+    "test:integration": "vitest run tests/database.integration.test.ts",
+    "test:watch": "vitest",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts",
+    "admin:bootstrap": "tsx scripts/bootstrap-admin.ts",
+    "env:check": "tsx scripts/check-env.ts",
+    "predeploy:check": "npm run env:check && npm run typecheck && npm run lint && npm run test && npm run build"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@next/env": "^15.5.28",
+    "@prisma/client": "^6.18.0",
+    "bcryptjs": "^3.0.2",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.468.0",
+    "next": "^15.5.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hook-form": "^7.65.0",
+    "resend": "^6.5.2",
+    "zod": "^4.6.7",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^15.5.6",
+    "playwright": "^1.56.1",
+    "postcss": "^8.5.23",
+    "prisma": "^6.18.0",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.6",
+    "typescript": "^5.7.2",
+    "vitest": "^5.0.5"
+  },
+  "overrides": {
+    "deepmerge-ts": "^8.0.0",
+    "postcss": "$postcss"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

@@ -1,0 +1,26 @@
+node_modules/
+.next/
+.next-dev/
+out/
+coverage/
+playwright-report/
+test-results/
+.vercel/
+.turbo/
+.cache/
+.openai/cache/
+
+.env
+.env.*
+!.env.example
+
+*.log
+*.tsbuildinfo
+*.db
+*.db-journal
+.DS_Store
+Thumbs.db
+
+# Local and generated files
+.openai/
+artifacts/

@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { GalleryGrid } from "./gallery-grid";
+export const metadata: Metadata = { title: "Gallery", description: "A look inside the coffee, plates, people, and after-dark atmosphere of NOIR & NEON." };
+export default function GalleryPage(){return <section className="min-h-screen px-5 pb-28 pt-32 lg:px-10"><div className="mx-auto max-w-[1600px]"><div className="grid gap-8 lg:grid-cols-[1fr_.7fr] lg:items-end"><div><p className="eyebrow">Coffee / room / people</p><h1 className="display-title mt-5">Night<br/><span className="text-blue">frames.</span></h1></div><p className="max-w-lg pb-3 text-sm leading-7 text-muted">An editorial view of the bar, the table, and the hours when NOIR & NEON finds its rhythm. Images are original project assets.</p></div><div className="mt-14"><GalleryGrid/></div></div></section>}
