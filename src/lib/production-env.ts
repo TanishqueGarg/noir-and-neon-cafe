@@ -43,10 +43,27 @@ export function checkProductionEnvironment(env: Environment): EnvironmentReport 
     errors.push("NEXT_PUBLIC_SITE_URL must be the canonical HTTPS origin with no path, query, or credentials.");
   }
 
-  if (!env.RESEND_API_KEY?.startsWith("re_") || env.RESEND_API_KEY.length < 20 || /^re_x{5,}$/i.test(env.RESEND_API_KEY)) errors.push("RESEND_API_KEY is required for live transactional email.");
-  const fromAddress = env.EMAIL_FROM?.match(/<([^>]+)>$/)?.[1] || env.EMAIL_FROM;
-  if (!operationalEmail(fromAddress)) errors.push("EMAIL_FROM must contain a valid non-placeholder verified sender address.");
-  if (!operationalEmail(env.ADMIN_NOTIFICATION_EMAIL)) errors.push("ADMIN_NOTIFICATION_EMAIL must be a valid non-placeholder address.");
+   const emailConfigured = Boolean(
+    env.RESEND_API_KEY || env.EMAIL_FROM || env.ADMIN_NOTIFICATION_EMAIL
+  );
+
+  if (!emailConfigured) {
+    warnings.push("Transactional email is not configured; email notifications are disabled.");
+  } else {
+    if (!env.RESEND_API_KEY?.startsWith("re_") || env.RESEND_API_KEY.length < 20 || /^re_x{5,}$/i.test(env.RESEND_API_KEY)) {
+      errors.push("RESEND_API_KEY must be a valid Resend API key when email is configured.");
+    }
+
+    const fromAddress = env.EMAIL_FROM?.match(/<([^>]+)>$/)?.[1] || env.EMAIL_FROM;
+
+    if (!operationalEmail(fromAddress)) {
+      errors.push("EMAIL_FROM must contain a valid non-placeholder verified sender address.");
+    }
+
+    if (!operationalEmail(env.ADMIN_NOTIFICATION_EMAIL)) {
+      errors.push("ADMIN_NOTIFICATION_EMAIL must be a valid non-placeholder address.");
+    }
+  }
   requiredSecret("RATE_LIMIT_SALT", env.RATE_LIMIT_SALT, errors);
   requiredSecret("CRON_SECRET", env.CRON_SECRET, errors);
 
